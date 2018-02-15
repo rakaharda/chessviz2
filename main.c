@@ -1,9 +1,13 @@
-<<<<<<< HEAD
 #include <stdio.h>
-
+#include <stdlib.h>
+void header (FILE *outfile) {
+FILE *source = fopen ("header.html", "rb");
+int c;
+while ((c = fgetc(source)) != EOF) {
+	fputc (c, outfile);
+}
+fclose (outfile);
+}
 int main (){
 
 }
-=======
-
->>>>>>> 839d760d61b2a4f595e7b5e480365ff2adaf48d7
