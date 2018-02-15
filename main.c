@@ -36,5 +36,14 @@ if (i/8==7) fprintf (outfile, "</tr>");
 }
 }
 int main (){
-
+FILE *index = fopen ("index.html", "wb");
+char *chessboard = {"br", "bn", "bb", "bk", "bq", "bb", "bn", "br",
+		   "bp", "bp", "bp", "bp", "bp", "bp", "bp", "bp",
+		   'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e',
+		   'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e',
+		   'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e',
+		   'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e',
+		   "wp", "wp", "wp", "wp", "wp", "wp", "wp", "wp",
+		   "wr", "wn", "wn", "wk", "wq", "wb", "wn", "wr"};
+body (index, chessboard);			
 }
