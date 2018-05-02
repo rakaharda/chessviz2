@@ -9,7 +9,7 @@ while ((c = fgetc(source)) != EOF) {
 }
 }
 
-void body (FILE *outfile, int board[64]) {
+void body (FILE *outfile, int *board) {
 fprintf (outfile, "<body>\n\t<table class=\"chessboard\">\n\t\t");
 for (int i = 0; i<64; i++) {
 if (i%8==0) fprintf (outfile, "<tr>");
