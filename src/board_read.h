@@ -1,1 +1,1 @@
-void boardread(int &board[64]);
+void boardread(int *board);

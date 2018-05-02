@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-void boardread (int &board[64]){
+#include <stdbool.h>
+void boardread (int *board){
 	char c;
 	bool attack=false;
 	short int cell1=0, cell2=0;
