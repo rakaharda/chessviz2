@@ -6,6 +6,7 @@ void boardread (int *board){
 	bool attack=false;
 	short int cell1, cell2;
 	FILE *input = fopen ("input.txt", "r");
+	if (input==NULL) {printf ("error opening file(2)"); return;}
 	c = fgetc(input);
 	while (c!=EOF)
 	{

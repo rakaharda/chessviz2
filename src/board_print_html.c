@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 void header (FILE *outfile) {
-FILE *source = fopen ("header.html", "r");
+FILE *source = fopen ("../bin/header.html", "r");
+if (source==NULL) {printf ("error opening file(3)"); return;}
 int c;
 while ((c = fgetc(source)) != EOF) {
 	fputc (c, outfile);
