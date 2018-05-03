@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-
-=======
-# chessviz
->>>>>>> 839d760d61b2a4f595e7b5e480365ff2adaf48d7
+[![Build Status](https://travis-ci.org/rakaharda/chessviz2.svg?branch=master)](https://travis-ci.org/rakaharda/chessviz2)
