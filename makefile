@@ -1,5 +1,5 @@
 CFLAGS = -Wall -Werror 
-OBJ = gcc -c $< -o $@ $(CFLAGS)
+OBJ = gcc -c $< -o $@  $(CFLAGS)-std=c99 
 
 .PHONY: clean
 all:bin build bin/deposit-calc 
