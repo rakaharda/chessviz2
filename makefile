@@ -1,10 +1,16 @@
-CFLAGS = -Wall -Werror 
-OBJ = gcc -c $< -o $@  $(CFLAGS)-std=c99 
+CFLAGS = -Wall -Werror -std=c99
+OBJ = gcc -c $< -o $@  $(CFLAGS)
 
-.PHONY: clean
-all:bin build bin/deposit-calc 
-bin/deposit-calc:  build/main.o build/board_print_html.o build/board_read.o
-	g++ $^ -o $@ $(CFLAGS)
+.PHONY: clean test
+all:bin build bin/chessviz
+
+test: bin/chessviz-test
+
+bin/chessviz:  build/main.o build/board_print_html.o build/board_read.o
+	gcc $^ -o $@ $(CFLAGS)
+
+bin/chessviz-test: build/main_test.o build/board_print_html.o build/board_read.o
+	gcc $^ -o $@ $(CFLAGS)
 
 build/board_print_html.o: src/board_print_html.c src/board_print_html.h
 	$(OBJ)
@@ -15,8 +21,10 @@ build/board_read.o: src/board_read.c src/board_read.h
 build/main.o: src/main.c
 	$(OBJ)
 
+build/main_test.o: test/main_test.c
+	$(OBJ)
 
-bin: 
+bin:
 	mkdir bin
 build:
 	mkdir build
