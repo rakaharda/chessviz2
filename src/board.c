@@ -75,10 +75,11 @@ int boardcheck (int *board, int cell1, int cell2, bool attack, int turn){
     if (board[cell1]==3||board[cell1]==9){
         if (!(turn%2)&&board[cell1]!=9) return 1;
         if (!attack) {
-            short int m;
+            short int m, n;
+            if (abs(cell1-cell2)%9==0) n=9; else n=7;
             if (cell1<cell2) m=1; else m=-1;
-            if (abs(cell2-cell1)%9!=0) return 3;
-            for (int i=9; i<abs(cell2-cell1)+1; i+=9)
+            if (abs(cell2-cell1)%n!=0) {printf (" %d %d %d", cell1, cell2, abs(cell2-cell1)%9);return 3;}
+            for (int i=n; i<abs(cell2-cell1)+1; i+=n)
                 if (board[cell1+(m*i)]!=0) return 4;
             return 0;
         }
