@@ -1,8 +1,8 @@
 #define CTEST_MAIN
 #include <stdio.h>
 #include <stdlib.h>
-#include "../thirdparty/ctest.h"
-#include "../src/board.h"
+#include <ctest.h>
+#include <board.h>
 #include <stdbool.h>
 
 CTEST (move, correct_pawn1) {

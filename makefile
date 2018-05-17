@@ -1,5 +1,5 @@
-CFLAGS = -Wall -std=c99
-OBJ = gcc -c $< -o $@  $(CFLAGS)
+CFLAGS = -Wall -std=c99 
+OBJ = gcc -I thirdparty -I src -c $< -o $@  $(CFLAGS)
 
 .PHONY: clean test
 all:bin build bin/chessviz
@@ -7,10 +7,10 @@ all:bin build bin/chessviz
 test: bin/chessviz-test
 
 bin/chessviz:  build/main.o build/board_print_html.o build/board_read.o build/board.o
-	gcc $^ -o $@ $(CFLAGS)
+	gcc  $^ -o $@ $(CFLAGS)
 
 bin/chessviz-test: build/main_test.o build/board_print_html.o build/board_read.o build/board.o
-	gcc $^ -o $@ $(CFLAGS)
+	gcc -I thirdparty -I src  $^ -o $@ $(CFLAGS)
 
 build/board_print_html.o: src/board_print_html.c src/board_print_html.h
 	$(OBJ)
