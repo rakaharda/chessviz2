@@ -84,7 +84,7 @@ int boardcheck (int *board, int cell1, int cell2, bool attack, int turn){
             return 0;
         }
     }
-    return 2;
+    return 99;
 }
 void boardmove (int *board, int cell1, int cell2) {
     board[cell2]=board[cell1];
