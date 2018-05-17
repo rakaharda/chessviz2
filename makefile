@@ -33,5 +33,5 @@ build:
 	mkdir build
 
 clean:
-	rm build/*.o
-	rm bin/*.exe
+	rm ./build/*.o
+	
