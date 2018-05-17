@@ -1,5 +1,6 @@
 #include "board.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 int boardcheck (int *board, int cell1, int cell2, bool attack, int turn){
     if (!attack) if (board[cell2]!=0) return 1;
