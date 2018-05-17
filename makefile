@@ -1,4 +1,4 @@
-CFLAGS = -Wall -std=c99 
+CFLAGS = -Wall -Werror -lm -std=c99 
 OBJ = gcc -I thirdparty -I src -c $< -o $@  $(CFLAGS)
 
 .PHONY: clean test
