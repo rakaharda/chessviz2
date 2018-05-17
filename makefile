@@ -4,7 +4,7 @@ OBJ = gcc -I thirdparty -I src -c $< -o $@  $(CFLAGS)
 .PHONY: clean test
 all:bin build bin/chessviz
 
-test: bin/chessviz-test
+test: bin build bin/chessviz-test
 
 bin/chessviz:  build/main.o build/board_print_html.o build/board_read.o build/board.o
 	gcc  $^ -o $@ $(CFLAGS)
